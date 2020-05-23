@@ -1,0 +1,8 @@
+### Problem statement
+A car manufacturer is setting up office in Cologne, Germany and is sourcing human resource from all over the world. The company plans to recruit 2000 people from various parts of the world, across culture, most of whom are absolutely new to Germany. The people moving to Germany are seeking the guidance of the HR department to understand the city and what it has to offer. As it became a huge task for the company to reply to each such query, they decided to hire a data scientist to provide comprehensive data about the various suburbs. I am the data scientist they have hired.
+
+### The source of data
+The company didn't have any source of data based on which a helpful solution could be provided. The company just stated the problem and gave a free hand on where I source the data from. I shared the intent of using websites to source some basic details of Cologne and use the FourSquare API for getting information about places of interest. The company approved of this.
+
+### Data collection:
+There is no comprehensive data set available about Germany. I sourced the data about the various postal codes in Cologne from http://zip-code.en.mapawi.com/germany/10/kreisfreie-stadt-koln/2/269/koln/50667/9428/ and used geopy.geocoders.Nominatim package to extract the names of all the suburbs, districts, latitude and longitude and store it in a CSV file named `KolnDetails.csv` which is here. Then I used the FourSquare API to find all the venues of interest in one kilometer distance from the city centre. And then based on the list of postal code I collected the details about places of interest in each of the suburbs in cologne. The Four Square API returns data for the venues of various categories which are then stored in a dataframe. 
